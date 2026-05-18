@@ -735,6 +735,7 @@ cite {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 1rem;
     padding-bottom: 1rem;
     padding-left:1rem ;
     height: 100%;
