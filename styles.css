@@ -47,6 +47,30 @@ body {
     transform: translateY(12px);
     transition: 0.3s ease;
 }
+#scrollTopBtn::after{
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00000065;
+    backdrop-filter: blur(20px);
+    color: #fed;
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #fed;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+#scrollTopBtn:hover::after{
+    opacity: 1;
+}
 #scrollTopBtn.visible {
     opacity: 1;
     visibility: visible;
@@ -173,6 +197,7 @@ nav a:hover::after {
 
 /* MENU BUTTON */
 .menu-btn{
+    position: relative;
     border: 1px solid #fed;
     border-radius: 5px;
     cursor: pointer;
@@ -184,6 +209,30 @@ nav a:hover::after {
     width: 35px;
     height: 35px;
     padding: 0 .3rem;
+}
+.menu-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #00000065;
+    backdrop-filter: blur(20px);
+    color: #fed;
+    font-family: var(--mono);
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #fed;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.menu-btn:hover::after {
+    opacity: 1;
 }
 .menu-btn div{
     width: 100%;
