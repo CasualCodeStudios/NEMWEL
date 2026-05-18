@@ -88,7 +88,7 @@ body {
     top: -100%;
     height: 60vh;
     width: 100vw;
-    padding: 5rem 3rem;
+    padding: 5rem 1rem;
     background-color: #000000b4;
     backdrop-filter: blur(10px);
     display: flex;
@@ -96,7 +96,6 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 999;
-    perspective: 800px;
     transition: top 0.5s cubic-bezier(0.76, 0, 0.24, 1);
 }
 .sidebar.open{
@@ -107,8 +106,11 @@ body {
     flex-direction: column;
 }
 .sidebar-nav a{
+    position: relative;
+    width: 100%;
     font-size: 1.2rem;
 }
+
 
 /* ── CURSOR ── */
 #cursor-ring {
@@ -869,34 +871,59 @@ cite {
 
 /* ── FOOTER ── */
 footer {
-    background: var(--cream);
-    color: var(--ink);
-    padding: 3rem 2.5rem;
-    display: flex; 
+    min-height: 50vh;
+    background: linear-gradient(to bottom, #00000091, #00000081) ,url("https://images.unsplash.com/photo-1631981152698-bdee35111fd2?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center/cover;
+    color: var(--cream);
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column; 
     justify-content: space-between;
     align-items: center; 
     flex-wrap: wrap; 
     gap: 1rem;
 }
+.footer-logo{
+    filter: 
+    drop-shadow(-5px 10px 5px #fed)
+    drop-shadow(5px -10px 5px #fed)
+    ;
+}
 .footer-mark {
-    font-size: 1.4rem; 
-    font-style: italic; 
+    font-style: italic;
+    font-size: clamp(3.5rem, 10vw, 9rem);
     font-weight: 300;
-    letter-spacing: -0.01em;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
 }
 .footer-links { 
     display: flex; 
     gap: 2rem; 
 }
 .footer-links a {
+    position: relative;
     text-decoration: none;
     font-family: var(--mono); 
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     letter-spacing: 0.2em; 
     text-transform: uppercase;
-    color: var(--ink); 
+    color: var(--cream); 
     opacity: 0.5;
     transition: opacity 0.3s;
+}
+.footer-links a::before{
+    position: absolute;
+    content: "";
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    transform: scale(0);
+    height: 2px;
+    background: var(--gold);
+    transition: .3s ease;
+
+}
+.footer-links a:hover::before{
+    transform: scale(1);
 }
 .footer-links a:hover { 
     opacity: 1; 
